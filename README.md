@@ -9,7 +9,3 @@
 - Utilizar **algoritmos de Machine Learning** para treino e implementação de modelos em ambientes de produção.
 - Desenvolver **indicadores e dashboards** que possam ser integrados em Sistemas de Apoio à Decisão (SAD).
 - Assegurar uma **comunicação eficiente dos resultados** obtidos.
-
-## Fontes de Informação
-
-Breast Cancer Wisconsin (Diagnostic) Data Set

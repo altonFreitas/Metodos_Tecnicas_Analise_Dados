@@ -20,8 +20,3 @@ Este estudo analisa fatores que influenciam a expectativa de vida, como imuniza�
 O projeto utiliza dados do Global Health Observatory (OMS) e das Nações Unidas sobre expectativa de vida, saúde e economia de 193 países no período de 2000 a 2015. Foram selecionados fatores críticos, como imunização, mortalidade, economia e sociedade, refletindo os avanços no setor da saúde, especialmente nos países em desenvolvimento.
 
 Os dados, consolidados num conjunto com 22 colunas e 2938 linhas, passaram por limpeza para lidar com valores em falta, principalmente relacionados à população, Hepatite B e PIB, frequentemente ausentes em países menos conhecidos. Esses países foram excluídos para garantir a qualidade do modelo final.
-
-# Fatores de decisão
-O conjunto de dados visa responder às seguintes questões-chave
-
-1 - Como os Fatores Socioeconómicos Influenciam a Expectativa de Vida?

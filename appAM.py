@@ -32,7 +32,7 @@ regressao_linear, arvore_decisao, random_forest = load_models()
 # Definir as variáveis de entrada
 st.title('Sistema de Apoio à Decisão')
 
-st.write("Escolha os valores para as variáveis ajustados por percentagem e preveja a Mortalidade Adulta ou Expectativa de Vida.")
+st.write("Escolha os valores para as variáveis ajustados por percentagem e preveja a Mortalidade Adulta.")
 
 # Exemplo de variáveis independentes
 model_option = st.selectbox('Selecione o Modelo', ['Regressão Linear', 'Árvore de Decisão', 'Random Forest'])
@@ -41,10 +41,9 @@ model_option = st.selectbox('Selecione o Modelo', ['Regressão Linear', 'Árvore
 input_data = {}
 if model_option in ['Regressão Linear', 'Árvore de Decisão', 'Random Forest']:
     # Percentagem de ajuste para as variáveis
-    perc_LifeExp = st.slider('Ajustar Life expectancy (%)', min_value=0, max_value=1000, value=100, step=1)
-    perc_hiv_aids = st.slider('Ajustar HIV/AIDS (%)', min_value=0, max_value=1000, value=100, step=1)
-    perc_schooling = st.slider('Ajustar Schooling (%)', min_value=0, max_value= 1000, value=100, step=1)
-    perc_bmi = st.slider('Ajustar BMI (%)', min_value=0, max_value=1000, value=100, step=1)
+    perc_LifeExp = st.slider('Ajustar Life expectancy (%)', min_value=0, max_value=100, value=100, step=1)
+    perc_hiv_aids = st.slider('Ajustar HIV/AIDS (%)', min_value=0, max_value=100, value=100, step=1)
+
 
 
     # Valores originais das variáveis
@@ -56,8 +55,6 @@ if model_option in ['Regressão Linear', 'Árvore de Decisão', 'Random Forest']
     # Ajustar os valores conforme a percentagem
     input_data['Life expectancy '] = valor_lifeExp_original * (perc_LifeExp / 100)
     input_data[' HIV/AIDS'] = valor_hiv_aids_original * (perc_hiv_aids / 100)
-    input_data['Schooling'] = valor_schooling_original * (perc_schooling / 100)
-    input_data[' BMI '] = valor_bmi_original * (perc_bmi / 100)  # Ajuste conforme os valores padrão adequados para o seu modelo
 
     # Preencher as outras variáveis com valores padrão (podem ser ajustados conforme necessário)
     num_faltando = 17 - len(input_data)
@@ -95,7 +92,7 @@ if prediction is not None:
     # Gerar gráfico de barras
     fig, ax = plt.subplots()
     ax.bar(model_option, prediction[0], color=color)
-    ax.set_ylabel('Previsão de Life expectancy')
+    ax.set_ylabel('Previsão da Mortalidade Adulta')
     ax.set_title(f'Previsão para o modelo: {model_option}')
     
     # Exibir o gráfico da previsão

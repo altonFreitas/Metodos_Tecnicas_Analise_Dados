@@ -42,10 +42,9 @@ model_option = st.selectbox('Selecione o Modelo', ['Regressão Linear', 'Árvore
 input_data = {}
 if model_option in ['Regressão Linear', 'Árvore de Decisão', 'Random Forest']:
     # Percentagem de ajuste para as variáveis
-    perc_mortalidade = st.slider('Ajustar Adult Mortality (%)', min_value=0, max_value=2000, value=100, step=1)
-    perc_hiv_aids = st.slider('Ajustar HIV/AIDS (%)', min_value=0, max_value=1000, value=100, step=1)
-    perc_thinness = st.slider('Ajustar thinness (%)', min_value=0, max_value= 1000, value=100, step=1)
-    perc_IncompositionOfResources = st.slider('Ajustar IoR (%)', min_value=0, max_value=1000, value=100, step=1)
+    perc_mortalidade = st.slider('Ajustar Adult Mortality (%)', min_value=0, max_value=100, value=100, step=1)
+    perc_hiv_aids = st.slider('Ajustar HIV/AIDS (%)', min_value=0, max_value=100, value=100, step=1)
+
 
 
     # Valores originais das variáveis
@@ -57,9 +56,7 @@ if model_option in ['Regressão Linear', 'Árvore de Decisão', 'Random Forest']
     # Ajustar os valores conforme a percentagem
     input_data['Adult Mortality'] = valor_mortalidade_original * (perc_mortalidade / 100)
     input_data[' HIV/AIDS'] = valor_hiv_aids_original * (perc_hiv_aids / 100)
-    input_data[' thinness 1-19 years'] = valor_thinness1_19_original * (perc_thinness / 100)
-    input_data['Income composition of resources'] = valor_IoR_original * (perc_IncompositionOfResources / 100)  # Ajuste conforme os valores padrão adequados para o seu modelo
-
+    
     # Preencher as outras variáveis com valores padrão (podem ser ajustados conforme necessário)
     num_faltando = 17 - len(input_data)
     for i in range(num_faltando):
